@@ -1,27 +1,31 @@
+const Hypertopic = require('../node_modules/hypertopic/index.js');
+
+db = new Hypertopic([
+  "http://argos2.hypertopic.org",
+  "http://steatite.hypertopic.org"
+]);
 
 
-
-
-// EXAMPLES
-//Get all users with optionnal params {keys ["users1", "users2"]}
+//Get all users /!\ not working
 exports.all = function(callback) {
-  console.log('hihi')
-  var rows = [{'name':'user1'}, {'name':'user2'}, {'name':'user3'}]
-  callback(null, rows)
+  console.log('all users')
+  db.getView('/user', x => {
+    var rows = x;
+    callback(null, rows)
+  })
+
 
 }
 
-// exports.byUsername = function(callback, name, from) {
-// 	var query = "SELECT t.*, count(f.id) as fol FROM (SELECT uf.* FROM users_full uf WHERE uf.username LIKE ?) t LEFT JOIN follow f ON f.from = ? AND f.to = t.id GROUP BY t.id "
-// 	var username = name+'%'
-// 	var inserts = [username, from, username]
-// 	query = mysql.format(query, inserts);
-// 	console.log(query)
-// 	connection.query(query, function(err, rows, fields) {
-// 	callback(err, rows)
-// });
-// }
-//
+//Get one user
+exports.byUsername = function(callback, name, from) {
+  console.log('we are looking for '+name)
+  db.getView('/user/'+name, x => {
+    var rows = x;
+    callback(null, rows)
+  })
+}
+
 // exports.byId = function(callback, id, from) {
 // 	console.log(query)
 // 	var query = "SELECT t.*, count(f.id) as fol FROM (SELECT uf.* FROM users_full uf WHERE uf.id = ?) t LEFT JOIN follow f ON f.from = ? AND f.to = ? GROUP BY t.id "
