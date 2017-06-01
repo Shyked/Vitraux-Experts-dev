@@ -8,9 +8,9 @@ db = new Hypertopic([
 
 
 //Get one user
-exports.byUsername = function(callback, name) {
-  console.log('we are looking for '+name)
-  db.getView('/user/'+name, x => {
+exports.getById = function(callback, id) {
+  console.log('we are looking for '+id)
+  db.getView('/viewpoint/'+id, x => {
     var rows = x;
     callback(null, rows)
   })
