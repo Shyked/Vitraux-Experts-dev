@@ -5,6 +5,14 @@ frisby.create('Get item by Corpus/Id')
   .expectJSONTypes("Vitraux - Bénel", {
 	  "0105eaada11cf24bc10d723c48ef6ab11d15880f": Object
 })
+  .expectJSONTypes("Vitraux - Bénel.0105eaada11cf24bc10d723c48ef6ab11d15880f", {
+	  creator: Array,
+	  resource: Array,
+	  spatial: Array,
+	  name: Array,
+	  thumbnail: Array,
+	  created: Array  
+})
   .expectJSON({
   "Vitraux - Bénel": {
     "0105eaada11cf24bc10d723c48ef6ab11d15880f": {
