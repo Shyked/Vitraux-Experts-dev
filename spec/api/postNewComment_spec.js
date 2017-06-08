@@ -1,11 +1,13 @@
 var frisby = require('frisby');
 frisby.create('Post New Comment')
-    .post('http://localhost:3000/api/comment', {
-    arr: [1, 2, 3, 4],
-    foo: "bar",
-    bar: "baz",
-    answer: 42
+///corpus/comment with body {id_item: varchar, id_corpus: varchar, user: varchar, text: varchar
+    .post('http://localhost:3000/api/corpus/comment', {
+    id_item: "_fake_item_",
+    id_corpus: "_fake_corpus_",
+    user: "baz",
+    text: "Ceci est un commentaire de test"
   })
-  .expectStatus(201)
+  .expectStatus(200)
 .toss();
+
 

@@ -1,19 +1,20 @@
 var frisby = require('frisby');
 frisby.create('Get item comments')
-  .get('http://localhost:3000/api/comment/Vitraux%20-%20B%C3%A9nel/0105eaada11cf24bc10d723c48ef6ab11d15880f')
+//  ITEM_comments : /corpus/Vitraux - Bénel/00745c3e27d91d00e3d4db33828dd8797e9c2195/comment
+  .get('http://localhost:3000/api/corpus/_fake_corpus_/_fake_item_/comment')
   .expectStatus(200)
-  .expectJSONTypes("Vitraux - Bénel", {
-	  "0105eaada11cf24bc10d723c48ef6ab11d15880f": Object
+    .expectJSONTypes("0", {
+    id: Number,
+	id_item: String,
+	id_corpus: String,
+	user: String,
+	text: String,
+	date: String,
 })
-  .expectJSONTypes("Vitraux - Bénel.0105eaada11cf24bc10d723c48ef6ab11d15880f", {
-	  creator: Array,
-	  resource: Array,
-	  spatial: Array,
-	  name: Array,
-	  thumbnail: Array,
-	  created: Array  
-})
-  .get('http://localhost:3000/api/comment/NONDEFINI')
-  .expectStatus(404)
 .toss();
 
+frisby.create('Get item comments ERROR')
+//  ITEM_comments : /corpus/Vitraux - Bénel/00745c3e27d91d00e3d4db33828dd8797e9c2195/comment
+  .get('http://localhost:3000/api/corpus/NONDEFINI/comment/NONDEFINI/comment')
+  .expectStatus(404)
+.toss();
