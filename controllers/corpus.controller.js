@@ -26,3 +26,26 @@ exports.getItemById = function(req, res) {
 	}
 }, req.params.corpusNamee, req.params.itemId)
 };
+
+exports.create_comment = function(req, res) {
+			Corpus.create_comment(req.body, function(err, response) {
+				if (!err) {
+					res.send(response)
+				}
+				else {
+					res.send(err.message)
+				}
+			})
+	}
+
+exports.get_comments = function(req, res) {
+		Corpus.getComments(function (err, item) {
+			//console.log(err, item)
+	    if (!err) {
+				res.send(item)
+		}
+		else {
+			res.send(err.message)
+		}
+	}, req.params.corpusNameee, req.params.itemIdd)
+	};
