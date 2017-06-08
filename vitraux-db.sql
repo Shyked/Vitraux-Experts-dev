@@ -21,11 +21,23 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_item` varchar(200) NOT NULL,
   `id_corpus` varchar(200) NOT NULL,
-  `user` varchar(100) NOT NULL,
+  `id_user` varchar(100) NOT NULL,
   `text` varchar(500) NOT NULL DEFAULT '',
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+-- Les données exportées n'étaient pas sélectionnées.
+-- Export de la structure de la table vitraux-db. sources
+CREATE TABLE IF NOT EXISTS `sources` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_corpus` varchar(200) NOT NULL,
+  `id_item` varchar(200) NOT NULL,
+  `id_user` varchar(200) NOT NULL,
+  `url` varchar(300) NOT NULL,
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- Les données exportées n'étaient pas sélectionnées.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

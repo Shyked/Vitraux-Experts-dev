@@ -49,3 +49,26 @@ exports.get_comments = function(req, res) {
 		}
 	}, req.params.corpusNameee, req.params.itemIdd)
 	};
+
+exports.add_source = function(req, res) {
+				Corpus.add_source(req.body, function(err, response) {
+					if (!err) {
+						res.send(response)
+					}
+					else {
+						res.send(err.message)
+					}
+				})
+		}
+
+exports.get_sources = function(req, res) {
+				Corpus.getComments(function (err, item) {
+					//console.log(err, item)
+			    if (!err) {
+						res.send(item)
+				}
+				else {
+					res.send(err.message)
+				}
+			}, req.params.corpusNameeee, req.params.itemIddd)
+			};
