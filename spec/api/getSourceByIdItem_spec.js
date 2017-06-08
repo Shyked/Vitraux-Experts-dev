@@ -7,8 +7,8 @@ frisby.create('Get item sources')
     id: Number,
 	id_item: String,
 	id_corpus: String,
-	user: String,
-	text: String,
+	id_user: String,
+	url: String,
 	date: String,
 })
 .toss();

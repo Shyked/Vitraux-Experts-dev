@@ -62,7 +62,7 @@ exports.add_source = function(req, res) {
 		}
 
 exports.get_sources = function(req, res) {
-				Corpus.getComments(function (err, item) {
+				Corpus.getSources(function (err, item) {
 					//console.log(err, item)
 			    if (!err) {
 						res.send(item)

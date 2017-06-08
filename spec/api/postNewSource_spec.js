@@ -5,7 +5,6 @@ frisby.create('Post New Source')
     id_item: "_fake_item_",
     id_corpus: "_fake_corpus_",
     id_user: "baz",
-    text: "Ceci est une source de test",
 	url: "http://wwww.utt.fr"
   })
   .expectStatus(200)

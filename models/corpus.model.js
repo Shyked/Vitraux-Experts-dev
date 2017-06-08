@@ -64,7 +64,7 @@ exports.add_source = function(post_body, callback) {
 }
 
 //Get sources for one specific item
-exports.getComments = function(callback, id_corpus, id_item) {
+exports.getSources = function(callback, id_corpus, id_item) {
   	var query = "SELECT * FROM sources WHERE id_corpus = ? AND  id_item = ?"
   	var inserts = [id_corpus, id_item]
   	query = mysql.format(query, inserts);
