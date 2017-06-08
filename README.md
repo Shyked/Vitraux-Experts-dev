@@ -22,13 +22,14 @@ jasmine-node spec/api/
 **Available services
 
 - (GET) USER_by_username : /users/aaf
-- (GET) CORPUS_by_username : /corpus/Vitraux - Bénel
-- (GET) ITEM_by_id : /corpus/Vitraux - Bénel/00745c3e27d91d00e3d4db33828dd8797e9c2195
+- (GET) CORPUS_by_username : /corpus/Vitraux - BÃ©nel
+- (GET) ITEM_by_id : /corpus/Vitraux - BÃ©nel/00745c3e27d91d00e3d4db33828dd8797e9c2195
 - (GET) VIEWPOINT_by_id : /viewpoint/a76306e4f17ed4f79e7e481eb9a1bd06
 - (POST) ITEM_comment : /corpus/comment with body {id_item: varchar, id_corpus: varchar, id_user: varchar, text: varchar}
 - (GET) ITEM_comments : /corpus/Vitraux - Bénel/00745c3e27d91d00e3d4db33828dd8797e9c2195/comment
 - (POST) ITEM_source : /corpus/source with body {id_item: varchar, id_corpus: varchar, id_user: varchar, text: varchar, url: varchar}
-- (GET) ITEM_sourcess : /corpus/Vitraux - Bénel/00745c3e27d91d00e3d4db33828dd8797e9c2195/sources
+- (GET) ITEM_sources : /corpus/Vitraux - Bénel/00745c3e27d91d00e3d4db33828dd8797e9c2195/sources
+
 
 **Installation
 
