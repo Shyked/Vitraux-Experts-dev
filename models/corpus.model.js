@@ -53,3 +53,22 @@ exports.getComments = function(callback, id_corpus, id_item) {
   	callback(err, rows)
   });
 }
+
+//add source on a specific item
+exports.add_source = function(post_body, callback) {
+	var query = "INSERT INTO sources SET ?";
+	var query = connection.query(query, post_body, function(err, result) {
+		console.log(query.sql)
+	callback(err, result)
+});
+}
+
+//Get sources for one specific item
+exports.getComments = function(callback, id_corpus, id_item) {
+  	var query = "SELECT * FROM sources WHERE id_corpus = ? AND  id_item = ?"
+  	var inserts = [id_corpus, id_item]
+  	query = mysql.format(query, inserts);
+  	connection.query(query, function(err, rows, fields) {
+  	callback(err, rows)
+  });
+}
