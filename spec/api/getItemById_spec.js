@@ -1,6 +1,6 @@
 var frisby = require('frisby');
 frisby.create('Get item by Corpus/Id')
-  .get('http://localhost:3000/api/corpus/Vitraux%20-%20B%C3%A9nel/0105eaada11cf24bc10d723c48ef6ab11d15880f')
+  .get('http://localhost:3001/api/corpus/Vitraux%20-%20B%C3%A9nel/0105eaada11cf24bc10d723c48ef6ab11d15880f')
   .expectStatus(200)
   .expectJSONTypes("Vitraux - Bénel", {
 	  "0105eaada11cf24bc10d723c48ef6ab11d15880f": Object

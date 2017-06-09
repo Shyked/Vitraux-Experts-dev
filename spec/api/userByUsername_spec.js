@@ -1,6 +1,6 @@
 var frisby = require('frisby');
 frisby.create('Get User AAF ')
-  .get('http://localhost:3000/api/users/aaf')
+  .get('http://localhost:3001/api/users/aaf')
   .expectStatus(200)
   .expectJSONTypes("aaf", {
 	  "viewpoint": Array,
