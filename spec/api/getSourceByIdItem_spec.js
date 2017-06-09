@@ -14,6 +14,6 @@ frisby.create('Get item sources')
 .toss();
 
 frisby.create('Get item comments ERROR')
-  .get('http://localhost:3000/api/corpus/NONDEFINI/comment/NONDEFINI/sources')
+  .get('http://localhost:3001/api/corpus/NONDEFINI/comment/NONDEFINI/sources')
   .expectStatus(404)
 .toss();
