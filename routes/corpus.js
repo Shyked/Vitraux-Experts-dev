@@ -16,7 +16,13 @@ router.route('/comment')
 
 router.route('/:corpusNameee/:itemIdd/comment')
 	.get(corpusCtrl.get_comments)
+	
+router.route('/comment/like')
+	.put(corpusCtrl.like_comment)
 
+router.route('/comment/dislike')
+	.put(corpusCtrl.dislike_comment)
+	
 router.route('/source')
 	.post(corpusCtrl.add_source)
 

@@ -72,3 +72,25 @@ exports.get_sources = function(req, res) {
 				}
 			}, req.params.corpusNameeee, req.params.itemIddd)
 			};
+			
+exports.like_comment = function(req, res) {
+				Corpus.like_comment(req.body, function(err, response) {
+					if (!err) {
+						res.send(response)
+					}
+					else {
+						res.send(err.message)
+					}
+				})
+		}
+		
+		exports.dislike_comment = function(req, res) {
+				Corpus.dislike_comment(req.body, function(err, response) {
+					if (!err) {
+						res.send(response)
+					}
+					else {
+						res.send(err.message)
+					}
+				})
+		}

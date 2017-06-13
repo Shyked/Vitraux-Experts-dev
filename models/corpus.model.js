@@ -58,7 +58,7 @@ exports.getComments = function(callback, id_corpus, id_item) {
 exports.add_source = function(post_body, callback) {
 	var query = "INSERT INTO sources SET ?";
 	var query = connection.query(query, post_body, function(err, result) {
-		console.log(query.sql)
+		//console.log(query.sql)
 	callback(err, result)
 });
 }
@@ -66,9 +66,27 @@ exports.add_source = function(post_body, callback) {
 //Get sources for one specific item
 exports.getSources = function(callback, id_corpus, id_item) {
   	var query = "SELECT * FROM sources WHERE id_corpus = ? AND  id_item = ?"
-  	var inserts = [id_corpus, id_item]
+  	var inserts = [id_corpus, id_item];
+
   	query = mysql.format(query, inserts);
   	connection.query(query, function(err, rows, fields) {
+  	callback(err, rows)
+  });
+}
+// like comment/
+exports.like_comment = function(put_body, callback)  {
+	var query = "UPDATE comments SET cpt_like=cpt_like+1 WHERE  id = ? ";
+	 var inserts = [put_body.id];
+	query = mysql.format(query, inserts);
+  	var query =connection.query(query, inserts, function(err, rows, fields) {
+  	callback(err, rows)
+  });
+}
+exports.dislike_comment = function(put_body, callback)  {
+	var query = "UPDATE comments SET cpt_dislike=cpt_dislike+1 WHERE  id = ? ";
+	var inserts = [put_body.id];
+	query = mysql.format(query, inserts);
+  	var query =connection.query(query, inserts, function(err, rows, fields) {
   	callback(err, rows)
   });
 }

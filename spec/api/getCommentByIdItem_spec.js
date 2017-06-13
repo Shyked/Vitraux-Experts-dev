@@ -10,6 +10,8 @@ frisby.create('Get item comments')
 	user: String,
 	text: String,
 	date: String,
+	cpt_like : Number,
+	cpt_dislike: Number
 })
 .toss();
 

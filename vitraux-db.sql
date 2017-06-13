@@ -47,3 +47,7 @@ CREATE TABLE IF NOT EXISTS `sources` (
 CREATE USER 'server'@'localhost' IDENTIFIED BY 'aqwzsxedc';
 GRANT  SELECT,  INSERT  ON *.* TO 'server'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
+
+ALTER TABLE `comments`
+	ADD COLUMN `cpt_like` INT NULL DEFAULT '0' AFTER `date`,
+	ADD COLUMN `cpt_dislike` INT NULL DEFAULT '0' AFTER `cpt_like`;
