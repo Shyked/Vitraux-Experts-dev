@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `sources` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_corpus` varchar(200) NOT NULL,
   `id_item` varchar(200) NOT NULL,
-  `id_user` varchar(200) NOT NULL,
+  `user` varchar(200) NOT NULL,
   `url` varchar(300) NOT NULL,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
