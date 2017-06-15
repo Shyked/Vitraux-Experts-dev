@@ -51,3 +51,6 @@ FLUSH PRIVILEGES;
 ALTER TABLE `comments`
 	ADD COLUMN `cpt_like` INT NULL DEFAULT '0' AFTER `date`,
 	ADD COLUMN `cpt_dislike` INT NULL DEFAULT '0' AFTER `cpt_like`;
+	
+	GRANT  UPDATE ON *.* TO 'server'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;

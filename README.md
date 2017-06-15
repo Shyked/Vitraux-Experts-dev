@@ -1,6 +1,7 @@
 "# Vitraux-Experts-dev" 
 
-API de l'application Vitraux experts
+API du back end de l'application Vitraux experts
+https://github.com/Hypertopic
 
 Pour lancer l'application : 
 node app.js
@@ -29,7 +30,8 @@ jasmine-node spec/api/
 - (GET) ITEM_comments : /corpus/Vitraux - Bénel/00745c3e27d91d00e3d4db33828dd8797e9c2195/comment
 - (POST) ITEM_source : /corpus/source with body {id_item: varchar, id_corpus: varchar, id_user: varchar, text: varchar, url: varchar}
 - (GET) ITEM_sources : /corpus/Vitraux - Bénel/00745c3e27d91d00e3d4db33828dd8797e9c2195/sources
-
+- (PUT) ITEM_comment_like : /corpus/comment/like with body {id_item: varchar}
+- (PUT) ITEM_comment_dislike : /corpus/comment/dislike with body {id_item: varchar}
 
 **Installation
 
